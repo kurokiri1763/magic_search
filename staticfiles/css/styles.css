@@ -1,0 +1,265 @@
+/* ページ全体のデザイン */
+html {
+    font-family: 'Cinzel', serif;
+    font-size: 16px; 
+    scroll-behavior: smooth; /* スクロールの動きを滑らかに */
+}
+
+body {
+    background-color: #ffffff; 
+    font-family: 'Cinzel', serif; /* 魔導書っぽいフォント */
+    color: #4a3f35; /* 文字色をダークブラウンに */
+}
+
+h1 {
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+    text-decoration:underline;
+}
+
+/* トップページの魔法カードのデザイン */
+.card-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+    padding: 16px;
+}
+
+.card-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.card {
+    background: #f9f9f9; /* 通常時の背景色 */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 1s ease, box-shadow 1s ease; /* アニメーション追加 */
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.rank-circle {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background: #ffea00;
+    color: rgb(0, 0, 0);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+.card-title {
+    font-size: 1.2em;
+}
+
+.card-summary {
+    margin: 8px 0;
+    color: #666;
+}
+
+.card-type {
+    font-size: 0.9em;
+    color: #888;
+}
+
+/* ホバー時のスタイル */
+.card:hover {
+    background: #fff7e8; /* ホバー時の背景色 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* ホバー時のシャドウ強調 */
+    transform: translateY(-7px); /* 少し浮き上がる */
+    text-shadow: 0 0 5px rgb(255, 136, 0);
+}
+
+/* 魔法の詳細ページのデザイン */
+.magic-details {
+    padding: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #f9f9f9;
+    margin: 16px auto;
+    max-width: 600px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.magic-details p {
+    margin: 8px 0;
+    line-height: 1.5;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 16px;
+    color: #00070f;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.effect-text {
+    color: #4d4c4c; 
+    /* border: 2px solid #c7c7c7;  */
+    font-weight: bold; 
+    background-color: #c7c7c7; 
+    padding: 8px; 
+    border-radius: 5px;
+    display: inline-block;
+    width: 97%;
+}
+
+/* サーチボタンを右上に配置 */
+.search-button-icon {
+    position: fixed;
+    top: 20px; /* ページ上部からの距離 */
+    right: 20px; /* ページ右端からの距離 */
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001; /* モーダルの上に配置されるように */
+}
+
+/* ボタン内の虫眼鏡アイコン */
+.search-button-icon .icon {
+    width: 30px; /* アイコンの幅 */
+    height: 30px; /* アイコンの高さ */
+}
+
+/* ホバー時のスタイル */
+.search-button-icon:hover .icon {
+    filter: brightness(0.8); /* 明るさを少し暗くする */
+}
+
+
+/* 魔法追加ボタンのデザイン */
+.add-magic-button {
+    text-align: center;
+    margin: 8px 0;
+}
+
+.add-magic-button .button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background-color 0.6s ease;
+}
+
+.add-magic-button .button:hover {
+    background-color: rgb(255, 72, 0);
+    text-shadow: 0 0 5px rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+
+
+/* フォーム全体のコンテナ */
+.form-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.magic-form input,
+.magic-form select,
+.magic-form textarea {
+    width: 100%;
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.submit-button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: rgb(255, 72, 0);
+}
+
+.back-link {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    color: #000000;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+/* モーダルのスタイル */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+    position: relative;
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 50%;
+    text-align: center;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+}
+
+.close-button:hover {
+    color: #000;
+}

@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Grimoire</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <script src="{% static 'js/modal.js' %}" defer></script>
+</head>
+<body>
+    <header>
+        <h1>YOUR GRIMOIRE</h1>
+    </header>
+    <main>
+        <button id="open-modal" class="search-button-icon">
+            <img src="{% static 'images/magnifying-glass.svg' %}" alt="Search" class="icon">
+        </button>
+        <!-- モーダルウィンドウ -->
+        <div id="search-modal" class="modal">
+            <div class="modal-content">
+                <span id="close-modal" class="close-button">&times;</span>
+                <h2>サイト内検索</h2>
+                <form method="get" action="{% url 'magic_search' %}">
+                    <input type="text" name="q" placeholder="キーワードで検索" value="{{ query }}" class="search-input">
+                    <select name="magic_type" class="search-select">
+                        <option value="">すべての系統</option>
+                        <option value="sorcerer" {% if magic_type == "sorcerer" %}selected{% endif %}>真語魔法</option>
+                        <option value="conjurer" {% if magic_type == "conjurer" %}selected{% endif %}>操霊魔法</option>
+                        <option value="wizard" {% if magic_type == "wizard" %}selected{% endif %}>深智魔法</option>
+                        <option value="priest" {% if magic_type == "priest" %}selected{% endif %}>基本神聖魔法</option>
+                        <option value="unique_priest" {% if magic_type == "unique_priest" %}selected{% endif %}>特殊神聖魔法</option>
+                        <option value="magitech" {% if magic_type == "magitech" %}selected{% endif %}>魔動機術</option>
+                        <option value="fairy_tamer" {% if magic_type == "fairy_tamer" %}selected{% endif %}>基本妖精魔法</option>
+                        <option value="special_fairy_tamer" {% if magic_type == "special_fairy_tamer" %}selected{% endif %}>特殊妖精魔法</option>
+                        <option value="druid" {% if magic_type == "druid" %}selected{% endif %}>森羅魔法</option>
+                        <option value="daemon_ruler" {% if magic_type == "daemon_ruler" %}selected{% endif %}>召異魔法</option>
+                        <option value="abyssgazer" {% if magic_type == "abyssgazer" %}selected{% endif %}>奈落魔法</option>
+                    </select>
+                    <select name="order_by" class="search-select">
+                        <option value="rank" {% if order_by == "rank" %}selected{% endif %}>ランク順</option>
+                        <option value="name" {% if order_by == "name" %}selected{% endif %}>名前順</option>
+                    </select>
+                    <button type="submit" class="submit-button">SEARCH</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- 魔法を追加するボタン -->
+        <div class="add-magic-button">
+            <a href="{% url 'add_magic' %}" class="button">ADD MAGIC</a>
+        </div>
+
+        <h2>MAGIC GALLERY</h2>
+
+        <div class="card-list">
+            {% for magic in magics %}
+            <a href="{% url 'magic_detail' magic.id %}" class="card-link">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="rank-circle">{{ magic.rank }}</div>
+                        <strong class="card-title">{{ magic.name }}</strong>
+                    </div>
+                    <p class="card-summary">{{ magic.summary }}</p>
+                    <p class="card-type">{{ magic.get_magic_type_display }}</p>
+                </div>
+            </a>
+            {% empty %}
+            <p class="no-results">該当する魔法は見つかりませんでした。</p>
+            {% endfor %}
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ magic.name }} | magic-details</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>{{ magic.name }} ({{ magic.get_magic_type_display }})</h1>
+    </header>
+    <main>
+        <div class="magic-details">
+            <p><strong>ランク:</strong> {{ magic.rank }}</p>
+            <p><strong>対象:</strong> {{ magic.target }}</p>
+            <p><strong>射程/形状:</strong> {{ magic.range_shape }}</p>
+            <p><strong>抵抗:</strong> {{ magic.get_resistance_display }}</p>
+            <p><strong>時間:</strong> {{ magic.duration }}</p>
+            <p><strong>消費:</strong> {{ magic.cost }}</p>
+            {% if magic.attribute %}
+            <p><strong>属性:</strong> {{ magic.attribute }}</p>
+            {% endif %}
+            <p><strong>概要:</strong> {{ magic.summary }}</p>
+            <p class="effect-text"><strong>効果:</strong> {{ magic.effect }}</p>
+            {% if magic.extended_effect1 %}
+            <p><strong>拡張効果1:</strong> {{ magic.extended_effect1 }}</p>
+            {% endif %}
+            {% if magic.extended_effect2 %}
+            <p><strong>拡張効果2:</strong> {{ magic.extended_effect2 }}</p>
+            {% endif %}
+        </div>
+        <a href="{% url 'magic_search' %}" class="back-link">検索ページに戻る</a>
+    </main>
+</body>
+</html>
