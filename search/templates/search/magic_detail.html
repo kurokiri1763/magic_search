@@ -14,23 +14,37 @@
     <main>
         <div class="magic-details">
             <p><strong>ランク:</strong> {{ magic.rank }}</p>
+
             <p><strong>対象:</strong> {{ magic.target }}</p>
+
             <p><strong>射程/形状:</strong> {{ magic.range_shape }}</p>
+
             <p><strong>抵抗:</strong> {{ magic.get_resistance_display }}</p>
+
             <p><strong>時間:</strong> {{ magic.duration }}</p>
+
             <p><strong>消費:</strong> {{ magic.cost }}</p>
+
             {% if magic.attribute %}
             <p><strong>属性:</strong> {{ magic.attribute }}</p>
             {% endif %}
+
             <p><strong>概要:</strong> {{ magic.summary }}</p>
-            <p class="effect-text"><strong>効果:</strong> {{ magic.effect }}</p>
+
+            <strong>効果</strong>
+            <p class="effect-text"> {{ magic.effect | linebreaksbr}}</p>
+            
+            <p><strong>詠唱:</strong> {{ magic.spell | linebreaksbr}}</p>
+
             {% if magic.extended_effect1 %}
             <p><strong>拡張効果1:</strong> {{ magic.extended_effect1 }}</p>
             {% endif %}
+
             {% if magic.extended_effect2 %}
             <p><strong>拡張効果2:</strong> {{ magic.extended_effect2 }}</p>
             {% endif %}
         </div>
+        <a href="{% url 'edit_magic' magic.id %}" class="edit-button">編集</a>
         <a href="{% url 'magic_search' %}" class="back-link">検索ページに戻る</a>
     </main>
 </body>

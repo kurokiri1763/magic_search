@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'search',
     'accounts',
     'add',
+    'edit',
 ]
 
 MIDDLEWARE = [

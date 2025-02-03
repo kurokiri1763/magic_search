@@ -37,7 +37,7 @@ class Magic(models.Model):
     cost = models.CharField(max_length=100, verbose_name="消費")
     summary = models.TextField(verbose_name="概要")
     attribute = models.CharField(max_length=50, verbose_name="属性", blank=True, null=True)
-    effect = models.TextField(verbose_name="効果")
+    effect = models.TextField(max_length=1000,verbose_name="効果")
     extended_effect1 = models.TextField(verbose_name="拡張効果1", blank=True, null=True)
     extended_effect2 = models.TextField(verbose_name="拡張効果2", blank=True, null=True)
     spell = models.TextField(max_length=100, verbose_name="詠唱", blank=True, null=True)
