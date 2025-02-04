@@ -2,9 +2,6 @@ from django.shortcuts import render, redirect
 from .forms import MagicForm
 
 def add_magic(request):
-    """
-    新しい魔法を追加するビュー
-    """
     if request.method == 'POST':
         form = MagicForm(request.POST)
         if form.is_valid():

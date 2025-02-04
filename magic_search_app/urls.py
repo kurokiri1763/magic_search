@@ -1,17 +1,16 @@
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
-from search.views import magic_search 
+from search.views import magic_search
 from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('search/', include('search.urls')),
-    path('accounts/', include('accounts.urls')),
+    # path('accounts/', include('accounts.urls')),
     path('add/', include('add.urls')),
     path('edit/', include('edit.urls')),
-    path('', magic_search, name='home'),
-    
+    path('/',include('search.urls')),
 ]
 
 if settings.DEBUG:  # DEBUGモードのときのみ

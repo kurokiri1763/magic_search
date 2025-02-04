@@ -34,7 +34,9 @@
             <strong>効果</strong>
             <p class="effect-text"> {{ magic.effect | linebreaksbr}}</p>
             
+            {% if magic.spell %}
             <p><strong>詠唱:</strong> {{ magic.spell | linebreaksbr}}</p>
+            {% endif %}
 
             {% if magic.extended_effect1 %}
             <p><strong>拡張効果1:</strong> {{ magic.extended_effect1 }}</p>
@@ -44,7 +46,7 @@
             <p><strong>拡張効果2:</strong> {{ magic.extended_effect2 }}</p>
             {% endif %}
         </div>
-        <a href="{% url 'edit_magic' magic.id %}" class="edit-button">編集</a>
+        <a href="{% url 'edit_magic' magic.id %}" class="edit-button">EDIT</a>
         <a href="{% url 'magic_search' %}" class="back-link">検索ページに戻る</a>
     </main>
 </body>

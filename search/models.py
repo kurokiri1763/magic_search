@@ -28,7 +28,7 @@ class Magic(models.Model):
     ]
 
     name = models.CharField(max_length=100, verbose_name="名前")
-    magic_type = models.CharField(max_length=20, choices=MAGIC_TYPES, verbose_name="魔法の系統")
+    magic_type = models.CharField(max_length=20, choices=MAGIC_TYPES, verbose_name="系統")
     rank = models.IntegerField(verbose_name="魔法ランク")
     target = models.CharField(max_length=100, verbose_name="対象")
     range_shape = models.CharField(max_length=100, verbose_name="射程/形状")
@@ -38,8 +38,8 @@ class Magic(models.Model):
     summary = models.TextField(verbose_name="概要")
     attribute = models.CharField(max_length=50, verbose_name="属性", blank=True, null=True)
     effect = models.TextField(max_length=1000,verbose_name="効果")
-    extended_effect1 = models.TextField(verbose_name="拡張効果1", blank=True, null=True)
-    extended_effect2 = models.TextField(verbose_name="拡張効果2", blank=True, null=True)
+    extended_effect1 = models.TextField(max_length=1000,verbose_name="拡張効果1", blank=True, null=True)
+    extended_effect2 = models.TextField(max_length=1000,verbose_name="拡張効果2", blank=True, null=True)
     spell = models.TextField(max_length=100, verbose_name="詠唱", blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="作成日時")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="更新日時")

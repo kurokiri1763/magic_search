@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-sec*cw)@oaxk$$gb6^zqm2ic@_xdpx@h^f072a&km(57f=z-rg
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['3.105.80.74', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -37,8 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'home',
     'search',
-    'accounts',
+    # 'accounts',
     'add',
     'edit',
 ]
@@ -139,7 +140,7 @@ LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/login/'
 
 #アカウントカスタムモデル
-AUTH_USER_MODEL = 'accounts.CustomUser'
+# AUTH_USER_MODEL = 'accounts.User'
 
 #メディアファイルの設定
 MEDIA_URL = '/media/'

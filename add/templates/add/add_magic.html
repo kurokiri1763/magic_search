@@ -17,74 +17,61 @@
             <form method="post" class="magic-form">
                 {% csrf_token %}
 
-
-                <!-- 名前 -->
                 <div class="form-group">
                     <label for="id_name">名前:</label>
                     {{ form.name }}
                 </div>
 
-                <!-- 魔法の系統 -->
                 <div class="form-group">
-                    <label for="id_magic_type">魔法の系統:</label>
+                    <label for="id_magic_type">系統:</label>
                     {{ form.magic_type }}
                 </div>
 
-                <!-- ランク -->
                 <div class="form-group">
                     <label for="id_rank">魔法ランク:</label>
                     {{ form.rank }}
                 </div>
 
-                <!-- 対象 -->
                 <div class="form-group">
                     <label for="id_target">対象:</label>
                     {{ form.target }}
                 </div>
 
-                <!-- 射程/形状 -->
                 <div class="form-group">
                     <label for="id_range_shape">射程/形状:</label>
                     {{ form.range_shape }}
                 </div>
 
-                <!-- 抵抗 -->
                 <div class="form-group">
                     <label for="id_resistance">抵抗:</label>
                     {{ form.resistance }}
                 </div>
 
-                <!-- 時間 -->
                 <div class="form-group">
                     <label for="id_duration">時間:</label>
                     {{ form.duration }}
                 </div>
 
-                <!-- 消費 -->
                 <div class="form-group">
                     <label for="id_cost">消費:</label>
                     {{ form.cost }}
                 </div>
 
-                <!-- 概要 -->
                 <div class="form-group">
                     <label for="id_summary">概要:</label>
                     {{ form.summary }}
                 </div>
 
-                <!-- 属性 -->
                 <div class="form-group">
                     <label for="id_attribute">属性:</label>
                     {{ form.attribute }}
                 </div>
 
-                <!-- 効果 -->
                 <div class="form-group">
                     <label for="id_effect">効果:</label>
                     {{ form.effect }}
                 </div>
 
-                <!-- 拡張効果 -->
                 <div id="extended-effects" style="display: none;">
                     <div class="form-group">
                         <label for="id_extended_effect1">拡張効果1:</label>
@@ -96,7 +83,6 @@
                     </div>
                 </div>
 
-                <!-- 詠唱 -->
                 <div id="spell-field" style="display: none;">
                     <div class="form-group">
                         <label for="id_spell">詠唱:</label>
