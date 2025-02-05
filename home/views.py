@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 
-def home(reqiest):
-    return
+def home(request):
+    return render(request, 'home/home.html',)

@@ -7,10 +7,10 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('search/', include('search.urls')),
-    # path('accounts/', include('accounts.urls')),
+    path('accounts/', include('accounts.urls')),
     path('add/', include('add.urls')),
     path('edit/', include('edit.urls')),
-    path('/',include('search.urls')),
+    path('',include('home.urls')),
 ]
 
 if settings.DEBUG:  # DEBUGモードのときのみ
