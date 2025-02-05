@@ -21,7 +21,7 @@
             <div class="modal-content">
                 <span id="close-modal" class="close-button">&times;</span>
                 <h2>サイト内検索</h2>
-                <form method="get" action="{% url 'magic_search' %}">
+                <form method="get" action="{% url 'search:magic_search' %}">
                     <input type="text" name="q" placeholder="キーワードで検索" value="{{ query }}" class="search-input">
                     <select name="magic_type" class="search-select">
                         <option value="">すべての系統</option>
@@ -55,7 +55,7 @@
 
         <div class="card-list">
             {% for magic in magics %}
-            <a href="{% url 'magic_detail' magic.id %}" class="card-link">
+            <a href="{% url 'search:magic_detail' magic.id %}" class="card-link">
                 <div class="card">
                     <div class="card-header">
                         <div class="rank-circle">{{ magic.rank }}</div>

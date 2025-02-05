@@ -3,16 +3,15 @@ from django.views.generic import TemplateView, CreateView
 from django.urls import reverse_lazy
 from .forms import SignUpForm
 
-
 class IndexView(TemplateView):
     """ ホームビュー """
-    template_name = "index.html"
+    template_name = "magic_search.html"
 
 class SignupView(CreateView):
     """ ユーザー登録用ビュー """
     form_class = SignUpForm # 作成した登録用フォームを設定
     template_name = "accounts/register.html" 
-    success_url = reverse_lazy("accounts:index") # ユーザー作成後のリダイレクト先ページ
+    success_url = reverse_lazy("search:magic_search") # ユーザー作成後のリダイレクト先ページ
 
     def form_valid(self, form):
         # ユーザー作成後にそのままログイン状態にする設定
