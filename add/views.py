@@ -6,7 +6,7 @@ def add_magic(request):
         form = MagicForm(request.POST)
         if form.is_valid():
             form.save()  # フォームのデータを保存
-            return redirect('magic_search')  # 成功したら検索ページにリダイレクト
+            return redirect('search:magic_search')  # 成功したら検索ページにリダイレクト
     else:
         form = MagicForm()  # 空のフォームを表示
 

@@ -68,6 +68,11 @@
             {% empty %}
             <p class="no-results">該当する魔法は見つかりませんでした。</p>
             {% endfor %}
+            
+            <form action="{% url 'accounts:logout' %}" method="post">
+                {% csrf_token %}
+                <button type="submit" class="logout-button">Logout</button>
+            </form>
         </div>
     </main>
 </body>

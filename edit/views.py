@@ -10,7 +10,7 @@ def edit_magic(request, magic_id):
         form = MagicForm(request.POST, instance=magic)
         if form.is_valid():
             form.save() 
-            return redirect('magic_detail', magic.id) 
+            return redirect('search:magic_detail', magic.id) 
     else:
         form = MagicForm(instance=magic)
 
