@@ -16,7 +16,7 @@ h1 {
     text-decoration:underline;
 }
 
-/* トップページの魔法カードのデザイン */
+/* 検索ページの魔法カードのデザイン */
 .card-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));

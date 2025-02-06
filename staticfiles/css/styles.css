@@ -266,7 +266,7 @@ h1 {
 
 .edit-button {
     display: inline-block;
-    background-color: #007bff; /* ボタンの背景色 (青) */
+    background-color: rgb(0, 0, 0);/* ボタンの背景色 (青) */
     color: white; /* 文字色 */
     font-weight: bold; /* 太字 */
     padding: 10px 20px; /* 内側の余白 */
@@ -276,6 +276,7 @@ h1 {
 }
 
 .edit-button:hover {
-    background-color: #0056b3; /* ホバー時の背景色 */
+    background-color: rgb(255, 72, 0);/* ホバー時の背景色 */
+    color: rgb(0, 0, 0); /* 文字色 */
     transform: scale(1.05); /* ホバー時に少し拡大 */
 }
